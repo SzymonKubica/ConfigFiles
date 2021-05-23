@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+	cp .vimrc ~/
+	cp .tmux.conf ~/
+	cp .bashrc ~/
+	echo "All settings are up to date."
+	echo "Files .vimrc .tmux.conf .bashrc were updated (overwritten in ~/))."
+fi
+
+if [ "$1" == "vim" ]
+then 
+	cp .vimrc ~/
+	echo "Vim settings are up to date."
+	echo "File .vimrc was updated (overwritten in ~/)."
+fi
+
+if [ "$1" == "tmux" ]
+then 
+	cp .tmux.conf ~/
+	echo "Tmux settings are up to date."
+	echo "File .tmux.conf was updated (overwritten in ~/)."
+fi
+
+if [ "$1" == "bash" ]
+then 
+	cp .bashrc ~/
+	echo "Bash settings are up to date."
+	echo "File .bashrc was updated (overwritten in ~/)."
+fi
+
+if [ "$1" == "git" ]
+then 
+	git add -A
+	git commit -m "Newest version of configFiles."
+	git push
+fi
+
+
+
