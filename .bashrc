@@ -137,7 +137,8 @@ export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\
 # If not in tmux, starts ssh-agent.
 if ! [ -n "$TMUX" ] 
 then
-	eval 'ssh-agent'
+	eval `ssh-agent`
+	ssh-add
 fi
 
 # Ensures that bash in wsl starts in ~/ and not in wsl installation dir.
