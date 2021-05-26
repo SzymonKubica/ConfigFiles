@@ -151,7 +151,7 @@ fi
 alias update="./.update"
 
 # Compresses the prompt so that it isn't too long.
-alias shortenPath="PROMPT_DIRTRIM=2"
+alias shortPrompt="PROMPT_DIRTRIM=2"
 
 
 
