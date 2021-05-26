@@ -150,5 +150,8 @@ fi
 # Adds an alias for update script which exports editor, tmux, bash settings.
 alias update="./.update"
 
+# Compresses the prompt so that it isn't too long.
+alias shortenPath="PROMPT_DIRTRIM=2"
+
 
 
