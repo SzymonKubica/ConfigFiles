@@ -116,20 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# C Tools lecture support
-if [ "$ARCH" == '' ]
-then
-  ARCH=`arch`
-fi
-export TOOLDIR=$HOME/c-tools
-export PATH="$TOOLDIR/bin:$TOOLDIR/bin/$ARCH:$PATH"
-if [ "$MANPATH" == '' ]
-then
-  export MANPATH=$TOOLDIR/man
-else
-  export MANPATH=${MANPATH}:$TOOLDIR/man
-fi
-
 export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ "
@@ -139,12 +125,6 @@ if ! [ -n "$TMUX" ]
 then
 	eval `ssh-agent`
 	ssh-add
-fi
-
-# Ensures that bash in wsl starts in ~/ and not in wsl installation dir.
-if [ $PWD == /mnt/c/WINDOWS/system32 ] 
-then
-	cd ~
 fi
 
 # Adds an alias for update script which exports editor, tmux, bash settings.

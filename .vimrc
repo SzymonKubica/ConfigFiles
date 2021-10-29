@@ -15,8 +15,10 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
+" Converts tabs to spaces
+set expandtab
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-e> :nohl<CR><C-l>
 " Enables smart-case search and makes it case-insensitive, searches incrementally.
 set smartcase
 set ignorecase
