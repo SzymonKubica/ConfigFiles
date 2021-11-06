@@ -15,6 +15,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias ssh_login='./.ssh_login'
+alias update='./.update'
 
 [[ -s /home/szymon/.autojump/etc/profile.d/autojump.sh ]] && source /home/szymon/.autojump/etc/profile.d/autojump.sh
 
