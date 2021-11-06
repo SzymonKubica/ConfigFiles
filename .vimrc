@@ -1,4 +1,4 @@
-" This is my .vimrc file. Version of 22.05.2021.
+" This is my .vimrc file. Version of 06.11.2021.
 
 " The following command sets numbers of lines to be relative to the cursor. 
 set relativenumber
@@ -16,12 +16,15 @@ set expandtab
  set softtabstop=2
  set tabstop=2
  set shiftwidth=2
+
 " Tabs for python
 "set softtabstop=4
 "set tabstop=4
 "set shiftwidth=4
+"
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-e> :nohl<CR><C-l>
+
 " Enables smart-case search and makes it case-insensitive, searches incrementally.
 set smartcase
 set ignorecase
