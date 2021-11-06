@@ -5,8 +5,9 @@ then
 	cp .vimrc ~/
 	cp .tmux.conf ~/
 	cp .bashrc ~/
+  cp .zshrc ~/
 	echo "All settings are up to date."
-	echo "Files .vimrc .tmux.conf .bashrc were updated (overwritten in ~/))."
+	echo "Files .vimrc .tmux.conf .bashrc .zshrc were updated (overwritten in ~/))."
 fi
 
 if [ "$1" == "vim" ]
@@ -28,6 +29,13 @@ then
 	cp .bashrc ~/
 	echo "Bash settings are up to date."
 	echo "File .bashrc was updated (overwritten in ~/)."
+fi
+
+if [ "$1" == "zsh" ]
+then 
+	cp .zshrc ~/
+	echo "Zsh settings are up to date."
+	echo "File .zshrc was updated (overwritten in ~/)."
 fi
 
 if [ "$1" == "git" ]
