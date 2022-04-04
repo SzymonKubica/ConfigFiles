@@ -9,6 +9,7 @@ ln -s "$HOME/.vimrc" "$HOME/.ideavimrc"
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
 
 pacman -Syu
+pacman -S tmux
 
 echo "Installing snapd..."
 pacman -S git gcc glibc base-devel --noconfirm
