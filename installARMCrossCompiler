@@ -1,0 +1,61 @@
+#!/usr/bin/sh
+
+[ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
+
+cd 
+mkdir ARMLinuxGnueabi
+cd ARMLinuxGnueabi
+
+pacman -S rsync
+pacman -S elfutils
+pacman -S glibc
+pacman -S zlib
+pacman -S libmpc
+pacman -S gperf
+pacman -S python
+pacman -S dejagnu
+pacman -S inetutils
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-linux-api-headers.git
+
+cd arm-linux-gnueabihf-linux-api-headers  
+makepkg -si
+cd ..
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-binutils.git
+
+cd arm-linux-gnueabihf-linux-binutils
+makepkg -si
+cd ..
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-gcc-stage1.git
+
+cd arm-linux-gnueabihf-gcc-stage1
+makepkg -si
+cd ..
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-glibc-headers.git
+
+cd arm-linux-gnueabihf-glibc-headers
+makepkg -si
+cd ..
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-gcc-stage2.git
+
+cd arm-linux-gnueabihf-gcc-stage2
+makepkg -si
+cd ..
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-glibc.git
+
+cd arm-linux-gnueabihf-glibc
+makepkg -si
+cd ..
+
+git clone https://aur.archlinux.org/arm-linux-gnueabihf-gcc.git
+
+cd arm-linux-gnueabihf-gcc
+makepkg -si
+cd ..
+
+
