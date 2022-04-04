@@ -43,6 +43,7 @@ then
 	cd ~/ConfigFiles
 	git add -A
 	git commit -m "Update the version of config files as of $(date)"
+	git push
 	cd
 fi
 
