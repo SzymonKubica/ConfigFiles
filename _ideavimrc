@@ -1,3 +1,0 @@
-set relativenumber
-imap ii <Esc> 
-set tabstop=2

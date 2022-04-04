@@ -120,15 +120,6 @@ export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ "
 
-# If not in tmux, starts ssh-agent.
-if ! [ -n "$TMUX" ] 
-then
-	eval `ssh-agent`
-	ssh-add
-fi
-
-# Adds an alias for update script which exports editor, tmux, bash settings.
-alias update="./.update"
 
 # Compresses the prompt so that it isn't too long.
 alias shortPrompt="PROMPT_DIRTRIM=2"

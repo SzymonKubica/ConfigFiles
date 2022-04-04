@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+cp updatePush ~/
+./updatePull
+
+ln -s "$HOME/.vimrc" "$HOME/.ideavimrc"

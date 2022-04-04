@@ -1,54 +1,60 @@
-" This is my .vimrc file. Version of 06.11.2021.
+" Version of 04.04.2022.
 
-" The following command sets numbers of lines to be relative to the cursor. 
-set relativenumber
-" The following command maps <i,i> to <Esc>.
-imap ii <Esc>
-" This command will highlight pairs of corresponding brackets. 
-set matchpairs+=<:>
-" This command highlights results of a search.
-set hlsearch
-" These commands enable smart-indent and smart-tab.
+"============================================================================="
+"                             General Settings
+
+set relativenumber " Set line numbers relative to the cursor. 
+
+" Map <i,i> to <Esc>.
+imap ii <Esc> 
+
+set matchpairs+=<:> " Highlight pairs of corresponding brackets. 
+set hlsearch        " Highlight results of a search.
 set smartindent
 set smarttab
-set expandtab
+
 " Makes tab shorter.
- set softtabstop=2
- set tabstop=2
- set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
 
 " Tabs for python
 "set softtabstop=4
 "set tabstop=4
 "set shiftwidth=4
-"
+
+
+set smartcase  "Enable smart-case search
+set ignorecase " Make search case-insensitive
+set incsearch  " Search incrementally
+
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-e> :nohl<CR><C-l>
+nnoremap <silent> <C-e> :nohl <CR><C-l>
 
-" Enables smart-case search and makes it case-insensitive, searches incrementally.
-set smartcase
-set ignorecase
-set incsearch
+"============================================================================="
+"															Style customisation
 
-"These commands set block cursor in normal, line in insert.
+" Set block cursor in normal mode, line in insert mode.
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
-"Adjusts the colorscheme.
 colorscheme slate
 
-" Turns on the syntax highlighting.
-syntax on
+syntax on " Turn on the syntax highlighting.
 
-" Making search highlight easily readable.
+" Make search highlight easily readable.
 set hlsearch
 hi Search ctermbg=LightGreen
 hi Search ctermfg=Red
 
-hi Comment ctermfg=Grey
-" vim-plug installation configuration.
+
+hi Comment ctermfg=Grey 
+
+"============================================================================="
+"																 Vim Plug-ins 
+
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -60,6 +66,9 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+" Get rid of concealed text highlighting in vimtex.
+hi clear Conceal
+
 " Points to bundle directory to look for plugins.
 call plug#begin('~/.vim/bundle')
 Plug 'lervag/vimtex'
@@ -68,6 +77,15 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" Enable ultisnips plugin
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 call plug#end()
+
+
+
 
 
