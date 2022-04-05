@@ -2,6 +2,10 @@
 
 use strict;
 
+# Usage 
+# To extract: ./keybindings.pl -e *file_to_save_bindings*
+# To apply:   ./keybindings.pl -i *file_to_save_bindings*
+
 my $action = '';
 my $filename = '-';
 
