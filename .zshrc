@@ -31,3 +31,4 @@ yf() { yay -Slq --noconfirm | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1}
 
 yr() { yay -Rns $(yay -Qe | fzf -m | awk '{print $1}'); }
 
+neofetch
