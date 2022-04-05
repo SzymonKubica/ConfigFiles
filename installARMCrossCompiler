@@ -1,61 +1,63 @@
 #!/usr/bin/sh
 
-[ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
-
+#################################
+# Important!!! For the script to work, 
+# delete the -Werror=format-security from /etc/makepkg.conf
+#################################
 cd 
 mkdir ARMLinuxGnueabi
-cd ARMLinuxGnueabi
 
-pacman -S rsync
-pacman -S elfutils
-pacman -S glibc
-pacman -S zlib
-pacman -S libmpc
-pacman -S gperf
-pacman -S python
-pacman -S dejagnu
-pacman -S inetutils
+sudo pacman -S rsync elfutils glibc zlib libmpc gperf python dejagnu inetutils --noconfirm
 
+gpg --recv-keys 79BE3E4300411886 
+gpg --recv-keys 38DBBDC86092693E
+gpg --recv-keys 3AB00996FC26A641 
+gpg --recv-keys 16792B4EA25340F8
+
+
+
+pushd ARMLinuxGnueabi
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-linux-api-headers.git
 
-cd arm-linux-gnueabihf-linux-api-headers  
-makepkg -si
-cd ..
+pushd arm-linux-gnueabihf-linux-api-headers  
+makepkg -si --noconfirm
+popd
 
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-binutils.git
 
-cd arm-linux-gnueabihf-linux-binutils
-makepkg -si
-cd ..
+pushd arm-linux-gnueabihf-binutils
+makepkg -si --noconfirm
+popd
 
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-gcc-stage1.git
 
-cd arm-linux-gnueabihf-gcc-stage1
-makepkg -si
-cd ..
+pushd arm-linux-gnueabihf-gcc-stage1
+makepkg -si --noconfirm
+popd
 
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-glibc-headers.git
 
-cd arm-linux-gnueabihf-glibc-headers
-makepkg -si
-cd ..
+pushd arm-linux-gnueabihf-glibc-headers
+makepkg -si --noconfirm
+popd
 
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-gcc-stage2.git
 
-cd arm-linux-gnueabihf-gcc-stage2
-makepkg -si
-cd ..
+pushd arm-linux-gnueabihf-gcc-stage2
+makepkg -si 
+popd
 
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-glibc.git
 
-cd arm-linux-gnueabihf-glibc
+pushd arm-linux-gnueabihf-glibc
 makepkg -si
-cd ..
+popd
 
 git clone https://aur.archlinux.org/arm-linux-gnueabihf-gcc.git
 
-cd arm-linux-gnueabihf-gcc
+pushd arm-linux-gnueabihf-gcc
 makepkg -si
-cd ..
+popd
 
+popd
 
