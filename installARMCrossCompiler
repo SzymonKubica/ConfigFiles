@@ -7,7 +7,8 @@
 cd 
 mkdir ARMLinuxGnueabi
 
-sudo pacman -S rsync elfutils glibc zlib libmpc gperf python dejagnu inetutils --noconfirm
+# Install dependencies
+sudo pacman -S rsync elfutils glibc zlib libmpc gperf python dejagnu inetutils qemu qemu-arch-extra --noconfirm
 
 gpg --recv-keys 79BE3E4300411886 
 gpg --recv-keys 38DBBDC86092693E
