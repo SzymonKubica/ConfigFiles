@@ -6,6 +6,7 @@ then
 	cp ~/.tmux.conf ~/ConfigFiles
 	cp ~/.bashrc ~/ConfigFiles
   cp ~/.zshrc ~/ConfigFiles
+	cp ~/.p10k.zsh ~/ConfigFiles
 	echo "All settings are up to date."
 	echo "Files .vimrc .tmux.conf .bashrc .zshrc were updated (overwritten in ~/ConfigFiles))."
 fi
