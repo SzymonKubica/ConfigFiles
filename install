@@ -15,7 +15,7 @@ echo "Installing snapd..."
 pacman -S git gcc glibc base-devel --noconfirm
 git clone https://aur.archlinux.org/snapd.git
 cd snapd 
-su szymon -s makepkg -si
+su szymon -c makepkg -si
 
 # Enable snap communication socket
 systemctl enable --now snapd.socket
