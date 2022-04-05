@@ -8,7 +8,7 @@ then
   cp .zshrc ~/
 	cp .p10k.zsh ~/
 	echo "All settings are up to date."
-	echo "Files .vimrc .tmux.conf .bashrc .zshrc were updated (overwritten in ~/))."
+	echo "Files .vimrc .tmux.conf .bashrc .zshrc .p10k.zsh were updated (overwritten in ~/))."
 fi
 
 if [ "$1" == "vim" ]
