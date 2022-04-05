@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-cp updatePush ~/
+cp .updatePush ~/
 ./updatePull
 
 cd 
@@ -9,13 +9,13 @@ ln -s "$HOME/.vimrc" "$HOME/.ideavimrc"
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
 
 pacman -Syu
-pacman -S tmux
+pacman -S tmux neofetch zathura autojump --noconfirm
 
 echo "Installing snapd..."
 pacman -S git gcc glibc base-devel --noconfirm
 git clone https://aur.archlinux.org/snapd.git
 cd snapd 
-makepkg -si
+su szymon -c makepkg -si
 
 # Enable snap communication socket
 systemctl enable --now snapd.socket
@@ -26,7 +26,6 @@ ln -s /var/lib/snapd/snap /snap
 echo "Snapd installed!"
 
 echo "Installing intellij..."
-snap install intellij-idea-community --classic --noconfirm
+snap install intellij-idea-community --classic 
 echo "Intellij installed!"
-
 
