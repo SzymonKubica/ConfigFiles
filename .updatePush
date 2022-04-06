@@ -9,7 +9,7 @@ then
 	cp ~/.p10k.zsh ~/ConfigFiles
 	cp ~/.config/neofetch/config.conf ~/ConfigFiles
 	echo "All settings are up to date."
-	echo "Files .vimrc .tmux.conf .bashrc .zshrc were updated (overwritten in ~/ConfigFiles))."
+	echo "Files .vimrc .tmux.conf .bashrc .zshrc .p10k.zsh were updated (overwritten in ~/ConfigFiles))."
 fi
 
 if [ "$1" == "git" ]
