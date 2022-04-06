@@ -20,7 +20,7 @@ alias ls='ls --color'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias neofetch='clear; neofetch'
+alias nf='clear; neofetch'
 
 alias ssh_login='./.ssh_login'
 alias update='./.update'
