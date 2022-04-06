@@ -7,36 +7,9 @@ then
 	cp .bashrc ~/
   cp .zshrc ~/
 	cp .p10k.zsh ~/
+	cp config.conf ~/.config/neofetch/
 	echo "All settings are up to date."
 	echo "Files .vimrc .tmux.conf .bashrc .zshrc were updated (overwritten in ~/))."
-fi
-
-if [ "$1" == "vim" ]
-then 
-	cp .vimrc ~/
-	echo "Vim settings are up to date."
-	echo "File .vimrc was updated (overwritten in ~/)."
-fi
-
-if [ "$1" == "tmux" ]
-then 
-	cp .tmux.conf ~/
-	echo "Tmux settings are up to date."
-	echo "File .tmux.conf was updated (overwritten in ~/)."
-fi
-
-if [ "$1" == "bash" ]
-then 
-	cp .bashrc ~/
-	echo "Bash settings are up to date."
-	echo "File .bashrc was updated (overwritten in ~/)."
-fi
-
-if [ "$1" == "zsh" ]
-then 
-	cp .zshrc ~/
-	echo "Zsh settings are up to date."
-	echo "File .zshrc was updated (overwritten in ~/)."
 fi
 
 if [ "$1" == "git" ]

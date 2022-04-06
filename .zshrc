@@ -20,6 +20,7 @@ alias ls='ls --color'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias neofetch='clear; neofetch'
 
 alias ssh_login='./.ssh_login'
 alias update='./.update'
@@ -38,6 +39,5 @@ yf() { yay -Slq --noconfirm | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1}
 
 yr() { yay -Rns $(yay -Qe | fzf -m | awk '{print $1}'); }
 
-neofetch --ascii_colors 36 --colors 36 15 15 36
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
